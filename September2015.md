@@ -28,6 +28,6 @@ For initial setup, open any ipython notebook and enter
 
 Then to use afterwards include
 
-`load_ext tikzmagic`
+`%load_ext tikzmagic`
 
 On windows with my latex installation I also needed to imgconvert.exe which is provided by imagemagick. So I installed the windows binary distribution [here](http://www.imagemagick.org/script/binary-releases.php#windows)
