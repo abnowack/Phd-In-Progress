@@ -35,3 +35,17 @@ On windows with my latex installation I also needed to imgconvert.exe which is p
 While this does install the needed program, the python script is a little outdated as the main executable is now called convert.exe
 
 To fix this after installing imagemagick browse to the installation folder (C:\Program Files\ImageMagick-6.9.2-Q16 in my case) and create a copy of convert.exe named imgconvert.exe
+
+# September 4
+
+Working on instead determine how to solve for the object image directly from projection data. Sophisticated image reconstruction algorithms can be applied afterwards.
+
+Roughly, we have S = P T where S is my observation and T is the unknown image. I'm trying to figure out how to create P, the matrix which turns image pixel into counts in the detector. I think I just need to turn each image pixel "on" and project the output.
+
+Need to create a discrete pixel setup of my raytracing programs. Tasks
+
+- [ ] Create a test image
+- [ ] Create sinogram of test image
+- [ ] Create transformation matrix for single pixel
+- [ ] Create transformation matrix for all pixels in image
+- [ ] Try to solve directly
