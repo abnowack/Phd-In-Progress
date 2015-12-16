@@ -90,9 +90,9 @@ NXS(5)  | NR = Number of reactions having secondary neutrons excluding elastic
 NXS(6)  | NTRP = Number of photon production reactions
 NXS(7)  | 
 NXS(8)  | NPCR = Number of delayed neutron precursor families
-NXS(9)  | 
-NXS(10) | 
-NXS(11) | 
+NXS(9)  | Excited State Number
+NXS(10) | Atomic Number
+NXS(11) | Atomic Mass Number
 NXS(12) | 
 NXS(13) | 
 NXS(14) | 
