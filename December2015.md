@@ -15,6 +15,8 @@ In the MCNP format the latest data release from ENDF/B-VII.1 Release 0 is stored
 
 From inspection, I think the data description is done through the file name and the ACE file contains a simple header and then plain tabulated cross-section data.
 
+### ACE Filename Format
+
 With ENDF/B-VII.1 a new ACE filename format was created called SZAX identifiers, in addition to a modified header format. This is detailed in LA-UR-12-25177
 
 SSSZZZAAA.dddCC
@@ -40,3 +42,63 @@ pp         | Photon            | Photoatomic, continuous-energy
 pu         | Photon            | Photonuclear, continuous-energy
 ny         | Neutron           | Dosimetry
 nt         | Neutron           | Thermal S(alpha, beta) discrete or continuous-energy
+
+### ACE Header Format
+
+```
+FMTVERSION SZAX SOURCE
+ATWGTR TEMP DATE N
+N lines of comments
+```
+
+Variable      | Format         | Description
+------------- | -------------- | -----------
+FMTVERSION    | 10 ASCII CHAR  | Format Version Number (2.0.0)
+SZAX          | 24 ASCII CHAR  | SZA + suffi(X)
+SOURCE        | 24 ASCII CHAR  | Source of data (ENDF/B-VII.1)
+ATWGTR        | 12 CHAR NUMBER | Atomic Weight Ratio of nuclide to neutron
+TEMP          | 12 CHAR NUMBER | Temperature of processed data (in MeV)
+DATE          | 8 ASCII CHAR   | Date when data table was created
+N             | INTEGER        | Number of comment lines
+Comment Lines | 70 ASCII CHAR  | N 70 Character long comment lines
+
+```
+ZZZAAA_1  ATWGTR_1  ZZZAAA_2  ATWGTR_2  ZZZAAA_3  ATWGTR_3  ZZZAAA_4  ATWGTR_4
+ZZZAAA_5  ATWGTR_5  ZZZAAA_6  ATWGTR_6  ZZZAAA_7  ATWGTR_7  ZZZAAA_8  ATWGTR_8
+ZZZAAA_9  ATWGTR_9  ZZZAAA_10 ATWGTR_10 ZZZAAA_11 ATWGTR_11 ZZZAAA_12 ATWGTR_12
+ZZZAAA_13 ATWGTR_13 ZZZAAA_14 ATWGTR_14 ZZZAAA_15 ATWGTR_15 ZZZAAA_16 ATWGTR_16
+```
+
+16 pairs of ZZZAAA and atomic weight ratios needed in the past for photoatomic tables but now ignored. The ZZZAAA are still used for thermal tables to indicate what scattering data is appropriate.
+
+This is then followed by the NXS array and JXS array
+
+```
+NXS(1) NXS(2) ... NXS(8)
+NXS(9) NXS(10) ... NXS(16)
+JXS(1) JXS(2) ... JXS(8)
+JXS(9) JXS(10) ... JXS(16)
+JXS(17) JXS(18) ... JXS(24)
+JXS(25) JXS(26) ... JXS(32)
+```
+
+The definitions for continuous-energy neutron data is given as follows
+
+NTY     | Description
+------- | -----------
+NXS(1)  | Length of second block of data
+NXS(2)  | ZA = 1000 * Z + A
+NXS(3)  | NES = Number of Energies
+NXS(4)  | NTR = Number of reactions excluding elastic
+NXS(5)  | NR = Number of reactions having secondary neutrons excluding elastic
+NXS(6)  | NTRP = Number of photon production reactions
+NXS(7)  | 
+NXS(8)  | NPCR = Number of delayed neutron precursor families
+NXS(9)  | 
+NXS(10) | 
+NXS(11) | 
+NXS(12) | 
+NXS(13) | 
+NXS(14) | 
+NXS(15) | NT = Number of PIKMT reactions
+NXS(16) | 0 = Normal Photon Production, -1 = Do not produce photons
