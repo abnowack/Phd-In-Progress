@@ -71,15 +71,11 @@ ZZZAAA_13 ATWGTR_13 ZZZAAA_14 ATWGTR_14 ZZZAAA_15 ATWGTR_15 ZZZAAA_16 ATWGTR_16
 
 16 pairs of ZZZAAA and atomic weight ratios needed in the past for photoatomic tables but now ignored. The ZZZAAA are still used for thermal tables to indicate what scattering data is appropriate.
 
-This is then followed by the NXS array and JXS array
+This is then followed by the NXS array
 
 ```
 NXS(1) NXS(2) ... NXS(8)
 NXS(9) NXS(10) ... NXS(16)
-JXS(1) JXS(2) ... JXS(8)
-JXS(9) JXS(10) ... JXS(16)
-JXS(17) JXS(18) ... JXS(24)
-JXS(25) JXS(26) ... JXS(32)
 ```
 
 The definitions for continuous-energy neutron data is given as follows
@@ -102,6 +98,17 @@ NXS(13) |
 NXS(14) | 
 NXS(15) | NT = Number of PIKMT reactions
 NXS(16) | 0 = Normal Photon Production, -1 = Do not produce photons
+
+This is then followed by the JXS array
+
+```
+JXS(1) JXS(2) ... JXS(8)
+JXS(9) JXS(10) ... JXS(16)
+JXS(17) JXS(18) ... JXS(24)
+JXS(25) JXS(26) ... JXS(32)
+```
+
+The definitions for continuous-energy neutron data is given as follows
 
 NTY     | Description
 ------- | -----------
