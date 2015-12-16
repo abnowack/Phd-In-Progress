@@ -102,3 +102,38 @@ NXS(13) |
 NXS(14) | 
 NXS(15) | NT = Number of PIKMT reactions
 NXS(16) | 0 = Normal Photon Production, -1 = Do not produce photons
+
+NTY     | Description
+------- | -----------
+JXS(1)  | ESZ = Location of Energy Table
+JXS(2)  | NU = Location of fission nu data
+JXS(3)  | MTR = Location of MT array
+JXS(4)  | LQR = Location of Q-Value array
+JXS(5)  | TYR = Location of Reaction Type array
+JXS(6)  | LSIG = Location of table of cross-section locators
+JXS(7)  | SIG = Location of cross sections
+JXS(8)  | LAND = Location of table of angular distribution locators
+JXS(9)  | AND = Location of angular distributions
+JXS(10) | LDLW = Location of table of energy distribution locators
+JXS(11) | DLW = Location of Energy distributions
+JXS(12) | GPD = Location of photon production data
+JXS(13) | MTRP = Location of Photon production MT array
+JXS(14) | LSIGP = Location of table of photon production cross-section locators
+JXS(15) | SIGP = Location of photon production cross sections
+JXS(16) | LANDP = Location of table of photon production angular distribution locators
+JXS(17) | ANDP = Location of photon production angular distributions
+JXS(18) | LDLWP = Location of table of photon production energy distribution locators
+JXS(19) | DLWP = Location of photon production energy distributions
+JXS(20) | YP = Location of table of yield multipliers
+JXS(21) | FIS = Location of Total Fission cross-section
+JXS(22) | END = Location of last word of this table
+JXS(23) | LUNR = Location of probabilitity tables
+JXS(24) | DNU = Location of delayed nubar data
+JXS(25) | BDD = Location of basic delayed data
+JXS(26) | DNEDL = Location of table of energy distribution locators
+JXS(27) | DNED = Location of energy distributions
+JXS(28) | 
+JXS(29) | 
+JXS(30) | 
+JXS(31) | 
+JXS(32) | 
